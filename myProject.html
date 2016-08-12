@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>动态交通评价与决策评估系统</title>
+    <link href='css/bootstrap.min.css' rel='stylesheet' />
+    <link href='css/bootstrap-responsive.min.css' rel='stylesheet' />
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+    <script src = 'libs/SuperMap.Include.js'></script>
+    <script type="text/javascript">
+        var map, CloudLayer,marker,markers;
+                function init(){
+                    map = new SuperMap.Map("map",{controls:[
+                        new SuperMap.Control.Navigation() ,
+                        new SuperMap.Control.Zoom(),
+		new SuperMap.Control.LayerSwitcher()
+                    ], allOverlays: true});
+                    CloudLayer = new SuperMap.Layer.CloudLayer();
+	        map.addControl(new SuperMap.Control.MousePosition());
+	        markers = new SuperMap.Layer.Markers("Markers");
+                    map.addLayers([CloudLayer,markers]);
+                    map.setCenter(new SuperMap.LonLat(11339634.286396, 4588716.5813769), 4);
+                    console.log(document.getElementById('navbody').getElementsByTagName('input'));
+	        var arr=document.getElementById('navbody').getElementsByTagName('input');
+	        for(var i=0;i<arr.length;i++){
+	        	arr[i].addEventListener("click",function(){
+	        		addMarker();
+	        	},false);
+	        }
+                }				
+        var infowin = null;
+        //定义mouseClickHandler函数，触发click事件会调用此函数
+        function mouseClickHandler(event){
+            closeInfoWin();
+            //初始化popup类
+            popup = new SuperMap.Popup(
+                    "chicken",
+                    marker.getLonLat(),
+                    new SuperMap.Size(220,140),
+                    '<img src="images/Beijing.jpg" alt="Welcome to Beijing">',
+                    true,
+                    null
+            );
+
+            infowin = popup;
+            //添加弹窗到map图层
+            map.addPopup(popup);
+        }
+
+        function closeInfoWin(){
+            if(infowin){
+                try{
+                    infowin.hide();
+                    infowin.destroy();
+                }
+                catch(e){}
+            }
+        }
+
+        function addMarker(){
+            size = new SuperMap.Size(50,50);
+            offset = new SuperMap.Pixel(-(size.w/2), -size.h);
+            icon = new SuperMap.Icon('images/markerflag.png', size, offset);
+            //初始化标记覆盖物类
+            marker = new SuperMap.Marker(new SuperMap.LonLat(12958503.66308,4850284.09217),icon);
+            //添加覆盖物到标记图层
+            markers.addMarker(marker);
+            //触发 mouseClickHandler()方法
+            marker.events.on({"click":mouseClickHandler});
+        }
+    </script>
+</head>
+<body onLoad = "init()">
+	<header>
+		<div>
+			<ul>
+				<li>
+					<a href=""><span class="spa1"></span></a>
+					<a href=""><span class="spa2"></span></a>
+					<a href=""><span class="spa3"></span></a>
+					<a href=""><span class="spa4"></span></a>
+					<a href=""><span class="spa5"></span></a>
+				</li>
+				<li><a href="">08:30&nbsp;&nbsp;星期二</a></li>
+				<li><a href="">2015年08月26日</a></li>
+				<li><a href="">欢迎您：马雪峰&nbsp;&nbsp;0108888</a></li>
+			</ul>
+			<h3>动态交通评价与决策评估系统</h3>
+			<div>
+				<ul>
+					<li><a href="" class="clasa1"></a><p>交通状态</p></li>
+					<li><a href="" class="clasa2"></a><p>交通控制</p></li>
+					<li><a href="" class="clasa3"></a><p>管理部署</p></li>
+					<li><a href="" class="clasa4"></a><p>行驶安全</p></li>
+					<li><a href="" class="clasa5"></a><p>主动诱导</p></li>
+					<li><a href="" class="clasa6"></a><p>静态安全</p></li>
+					<li><a href="" class="clasa7"></a><p>热谱地图</p></li>
+					<li><a href="" class="clasa8"></a><p>排放地图</p></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<nav>
+		<div id="navheader">
+			<h5>交通对象</h5>
+			<div>
+				<button class="divbtn">实时</button>
+				<div>
+					<span class="spalt"></span><span class="spalt"></span><button class="div2btn">-</button><s></s><b></b><button class="div2btn">+</button><span class="spagt"></span><span class="spagt"></span>
+				</div>
+				<span>22:30</span>
+			</div>
+			<p>
+				<span>时间刻度(分钟):</span>
+				<input type="checkbox" name="">01
+				<input type="checkbox" name="">02
+				<input type="checkbox" name="">03
+			</p>
+		</div>
+		<div id="navbody">
+			<h5>图层管理</h5>
+			<div>
+				<p><span></span>路网编辑</p>
+				<ul>
+					<li><input type="checkbox" name="">节点</li>
+					<li><input type="checkbox" name="">路段</li>
+					<li><input type="checkbox" name="">小区</li>
+					<li><input type="checkbox" name="">小区出入点</li>
+				</ul>
+			</div>
+			<div>
+				<p><span></span>设备管理</p>
+				<ul>
+					<li><input type="checkbox" name="">信号控制</li>
+					<li><input type="checkbox" name="">路段车流</li>
+					<li><input type="checkbox" name="">路口车流</li>
+					<li><input type="checkbox" name="">旅行时间</li>
+					<li><input type="checkbox" name="">天气观测</li>
+					<li><input type="checkbox" name="">诱导显示</li>
+					<li><input type="checkbox" name="">视频监控</li>
+				</ul>
+			</div>
+			<div>
+				<p><span></span>人员车辆</p>
+				<ul>
+					<li><input type="checkbox" name="">工作人员</li>
+					<li><input type="checkbox" name="">流动车辆</li>
+					<li><input type="checkbox" name="">物资存放</li>
+				</ul>
+			</div>
+			<div>
+				<p><span></span>动态事件</p>
+				<ul>
+					<li><input type="checkbox" name="">道路施工</li>
+					<li><input type="checkbox" name="">事故事件</li>
+					<li><input type="checkbox" name="">应急抢修</li>
+					<li><input type="checkbox" name="">恶劣天气</li>
+					<li><input type="checkbox" name="">交通管制</li>
+					<li><input type="checkbox" name="">商场周边</li>
+					<li><input type="checkbox" name="">学校周边</li>
+					<li><input type="checkbox" name="">医院周边</li>
+					<li><input type="checkbox" name="">大型活动</li>
+					<li><input type="checkbox" name="">紧急疏散</li>
+					<li><input type="checkbox" name="">假日出行</li>
+			</div>
+			<div>
+				<p><span></span>优化措施</p>
+				<ul>
+					<li><input type="checkbox" name="">信息屏诱导</li>
+					<li><input type="checkbox" name="">电台广播</li>
+					<li><input type="checkbox" name="">主动诱导</li>
+					<li><input type="checkbox" name="">信号控制</li>
+					<li><input type="checkbox" name="">匝道控制</li>
+				</ul>
+			</div>
+			<div>
+				<p><span></span>决策内容</p>
+				<ul>
+					<li><input type="checkbox" name="">交通限行</li>
+					<li><input type="checkbox" name="">收费车道</li>
+				</ul>
+			</div>
+		</div>
+		<div id="navfooter">
+			<h5>对象参数</h5>
+			<p>节点编号&nbsp;&nbsp;&nbsp;&nbsp;8799</p>
+			<p>节点名称&nbsp;&nbsp;&nbsp;&nbsp;万家丽路口</p>
+			<p>节点经度&nbsp;&nbsp;&nbsp;&nbsp;2.990533</p>
+			<p>节点纬度&nbsp;&nbsp;&nbsp;&nbsp;23.709122</p>
+			<p>控制类型&nbsp;&nbsp;&nbsp;&nbsp;0-未知</p>
+			<p>信号周期&nbsp;&nbsp;&nbsp;&nbsp;120&nbsp;s</p>
+		</div>
+	</nav>
+	<div id="main">
+		<section><div id = "map"></div></section>
+		<footer>
+			<div>
+				<ul>
+					<li><a href="" class="clasfa1"></a><span>信号控制</span></li>
+					<li><a href="" class="clasfa2"></a><span>路段检测</span></li>
+					<li><a href="" class="clasfa3"></a><span>路口检测</span></li>
+					<li><a href="" class="clasfa4"></a><span>天气观测</span></li>
+					<li><a href="" class="clasfa5"></a><span>人车分布</span></li>
+					<li><a href="" class="clasfa6"></a><span>诱导显示</span></li>
+					<li><a href="" class="clasfa7"></a><span>视频监控</span></li>
+				</ul>	
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
