@@ -1,0 +1,318 @@
+body{
+            margin: 0;
+            background: #fff;
+}
+#map{
+            position: relative;
+            height: 450px;
+}
+#map:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+nav{
+    width: 15.5%;
+     float: left;
+}
+#main{
+    width: 84.49%;
+    float: left;
+}
+/****************************************************************/
+header>div{
+    width:100%;
+    background-color: #084a91;
+}
+header>div:before{
+               content:"";
+               display:table;
+}
+
+header>div:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+header>div>ul { 
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    width: 100%;
+    min-height: 40px;
+}
+header>div>ul>li{
+    list-style-type: none;
+    padding: 0px;
+    margin-right:30px; 
+    float: right;
+    padding-top: 15px;
+}
+header>div>ul>li>a{
+    color: #fff;
+    text-decoration:none;
+}
+header>div>ul>li>a:hover{
+    color: #fff;
+    text-decoration:none;
+}
+header>div>ul>li>a>span{
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    margin-top: 1px;
+    margin: 0px 3px;
+}
+header>div>ul>li>a>span.spa1{
+    background: url(../images/backgroundImg.png) no-repeat -39px -829px;
+}
+header>div>ul>li>a>span.spa2{
+    background: url(../images/backgroundImg.png) no-repeat -154px -828px;
+}
+header>div>ul>li>a>span.spa3{
+    background: url(../images/backgroundImg.png) no-repeat -268px -829px;
+}
+header>div>ul>li>a>span.spa4{
+    background: url(../images/backgroundImg.png) no-repeat -381px -829px;
+}
+header>div>ul>li>a>span.spa5{
+    background: url(../images/backgroundImg.png) no-repeat -496px -829px;
+}
+/******************************************************************/
+header>div>h3{
+    float: left;
+    font-family:"Times New Roman bold";
+}
+/******************************************************************/
+header>div>div>ul{
+    margin-left:100px;
+    padding:0px;
+}
+header>div>div{
+    float:right;
+    border-top-left-radius:300px;
+    box-shadow: -16px 1px 0px #a4c1e5;
+    background-color: #2364b0;
+}
+header>div>div:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+header>div>div>ul>li{
+    float:left;
+    list-style-type: none;
+    margin-left: 30px;
+    padding-top:10px; 
+}
+header>div>div>ul>li>a{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+header>div>div>ul>li>p{
+    text-align: center;
+    margin: 0px;
+    padding:0px;
+    color: #fff;
+}
+header>div>div>ul>li>a.clasa1{
+    background: url(../images/backgroundImg.png) no-repeat 0px -41px;
+}
+header>div>div>ul>li>a.clasa1:hover{
+    background: url(../images/backgroundImg.png) no-repeat -2px -227px;
+}
+header>div>div>ul>li>a.clasa2{
+    background: url(../images/backgroundImg.png) no-repeat -187px -41px;
+}
+header>div>div>ul>li>a.clasa2:hover{
+    background: url(../images/backgroundImg.png) no-repeat -189px -227px;
+}
+header>div>div>ul>li>a.clasa3{
+    background: url(../images/backgroundImg.png) no-repeat -365px -41px;
+}
+header>div>div>ul>li>a.clasa3:hover{
+    background: url(../images/backgroundImg.png) no-repeat -367px -227px;
+}
+header>div>div>ul>li>a.clasa4{
+    background: url(../images/backgroundImg.png) no-repeat -554px -41px;
+}
+header>div>div>ul>li>a.clasa4:hover{
+    background: url(../images/backgroundImg.png) no-repeat -556px -227px;
+}
+header>div>div>ul>li>a.clasa5{
+    background: url(../images/backgroundImg.png) no-repeat -737px -41px;
+}
+header>div>div>ul>li>a.clasa5:hover{
+    background: url(../images/backgroundImg.png) no-repeat -739px -227px;
+}
+header>div>div>ul>li>a.clasa6{
+    background: url(../images/backgroundImg.png) no-repeat -924px -41px;
+}
+header>div>div>ul>li>a.clasa6:hover{
+    background: url(../images/backgroundImg.png) no-repeat -926px -227px;
+}
+header>div>div>ul>li>a.clasa7{
+    background: url(../images/backgroundImg.png) no-repeat -1110px -41px;
+}
+header>div>div>ul>li>a.clasa7:hover{
+    background: url(../images/backgroundImg.png) no-repeat -1112px -227px;
+}
+header>div>div>ul>li>a.clasa8{
+    background: url(../images/backgroundImg.png) no-repeat -1290px -41px;
+}
+header>div>div>ul>li>a.clasa8:hover{
+    background: url(../images/backgroundImg.png) no-repeat -1292px -227px;
+}
+/*************************************************************/
+#navheader,#navbody,#navfooter{
+    border:3px solid #6c90c8;
+    border-left-width: 4px;
+}
+#navheader>h5,#navbody>h5,#navfooter>h5{
+    background-image: linear-gradient(90deg,#187fc4 0,#fff 100%);
+     margin:0px;
+    padding:0px;
+}
+#navheader>div>p,#navbody>div>p,#navfooter>div>p{
+     margin:0px;
+    padding:0px;
+}
+#navheader>div>ul,#navbody>div>ul,#navfooter>div>ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    margin-left: 20px;   
+}
+#navheader>div>p>span,#navbody>div>p>span,#navfooter>div>p>span{
+    display: inline-block;
+    border-top: 5px solid #fff;
+    border-bottom: 5px solid #fff;
+    border-left: 12px solid #000;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+#navheader{
+    height: 110px;
+}
+#navheader div button.divbtn{
+    display: block;
+    margin: 0 auto;
+}
+#navheader div div button.div2btn{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0px 5px;
+    padding: 0px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 8px;
+}
+#navheader div div span.spalt{
+    display: inline-block;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    border-right: 8px solid #000;
+    cursor: pointer;
+    margin: 0px;
+}
+#navheader div div span.spagt{
+    display: inline-block;
+    border-top: 4px solid #fff;
+    border-bottom: 4px solid #fff;
+    border-left: 8px solid #000;
+    cursor: pointer;
+    margin: 0px;
+}
+#navheader div div s{
+    display: inline-block;
+    width: 120px;
+    height: 8px;
+    background-color: #000;
+    cursor: pointer;
+}
+#navheader div div{
+    position: relative;
+}
+#navheader div div b{
+    display: inline-block;
+    width: 5px;
+    height: 18px;
+    background-color: #000;
+    position: absolute;
+    left: 100px;
+    top: 2px;
+    cursor: pointer;
+}
+#navheader div span{
+    display:block;
+    text-align: center;
+}
+#navbody{
+    height: 230px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#navfooter{
+    height: 94px;
+    overflow: scroll;
+    overflow-x: hidden;
+    box-shadow: 0px 45px 0px #036eb8;
+}
+#navfooter p{
+    margin: 0px;
+    padding:0px;
+}
+/*************************************************************/
+footer{
+    background-color: #036eb8;
+    text-align: center;
+}
+footer>div:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+footer>div>ul{
+    margin: 0px;
+    padding:0px;
+    display: inline-block;
+}
+footer>div>ul>li{
+    float: left;
+    list-style-type: none;
+    margin: 10px 10px;
+    font-size: 26px;
+    cursor: pointer;
+    position: relative;
+}
+footer>div>ul>li>a{  
+    display: inline-block;
+    width: 100px;
+    height: 90px;
+    position: absolute;
+    left: 1px;
+    top:-98px;
+}
+footer>div>ul>li>a.clasfa1{
+    background: url(../images/backgroundImg.png) no-repeat -0px -500px;
+}
+footer>div>ul>li>a.clasfa2{
+    background: url(../images/backgroundImg.png) no-repeat -150px -500px;
+}
+footer>div>ul>li>a.clasfa3{
+    background: url(../images/backgroundImg.png) no-repeat -298px -500px;
+}
+footer>div>ul>li>a.clasfa4{
+    background: url(../images/backgroundImg.png) no-repeat -444px -500px;
+}
+footer>div>ul>li>a.clasfa5{
+    background: url(../images/backgroundImg.png) no-repeat -596px -500px;
+}
+footer>div>ul>li>a.clasfa6{
+    background: url(../images/backgroundImg.png) no-repeat -744px -500px;
+}
+footer>div>ul>li>a.clasfa7{
+    background: url(../images/backgroundImg.png) no-repeat -892px -500px;
+}
